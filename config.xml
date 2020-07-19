@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.loopa.ct.com" versionCode="1" version="1.0.0" xmlns:android="http://schemas.android.com/apk/res/android">
+  <name>LOOPA</name>
+  <description>LOOPA</description>
+  <author email="admin@jessonbejarano.com" href="jessonbejarano.com">
+      Jesson Bejarano
+    </author>
+  <content src="index.html" />
+  <access origin="*" />
+   
+  <!-- Support for Cordova 5.0.0 plugin system -->
+  <plugin name="cordova-plugin-splashscreen" source="npm"/>
+  <plugin name="cordova-plugin-statusbar" source="npm"/>
+  <plugin name="cordova-plugin-whitelist" spec="1" />
+  <plugin name="cordova-plugin-internet-status" source="npm" />
+
+
+  <preference name="phonegap-version" value="cli-9.0.0" />
+  <preference name="AutoHideSplashScreen" value="true" />
+  <preference name="SplashScreenDelay" value="3000" />
+  <preference name="SplashScreen" value="screen"/>
+  <preference name="Fullscreen" value="false"/>
+  <preference name="Orientation" value="portrait" />
+
+    
+  
+  <platform name="android">
+    <preference name="android-targetSdkVersion" value="28" />
+     <plugin name="cordova-android-support-gradle-release" sourcere="npm">
+      <variable name="ANDROID_SUPPORT_VERSION" value="28.0.0"/> 
+    </plugin>
+  </platform>
+
+  <platform name="android">
+    <edit-config file="AndroidManifest.xml" target="/manifest/application" mode="merge">
+      <application android:usesCleartextTraffic="true" />
+    </edit-config>
+  </platform>
+
+
+
+  <!-- According to the docs you only need this block -->
+  <!-- This plugin provides information about the device's location, such as latitude and longitude. -->
+  <plugin name="cordova-plugin-geolocation" spec="~4">
+      <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="Esta aplicación usara tu ubicación para mapas.." />
+  </plugin>
+
+  <!-- On iOS you'll get multiple access location prompts with cordova-plugin-geolocation 4.0.1 -->
+  <!-- And the app will not save the access location permisssion in the iOS settings. -->
+  <!-- And on every start of your app it the access location dialog will wil re-appear. -->
+  <!-- It als odoe not show the permission in the required format for the Apple app store. -->
+  <!-- It's probably related to https://issues.apache.org/jira/browse/CB-13680 -->
+  <!-- If you override all the messages the app will show a properly formatted prompt and it will save the settings. -->
+  <platform name="ios">
+      <edit-config target="NSLocationAlwaysAndWhenInUseUsageDescription" file="*-Info.plist" mode="merge">
+          <string>Esta aplicación usara tu ubicación para mapas.</string>
+      </edit-config>
+      <edit-config target="NSLocationWhenInUseUsageDescription" file="*-Info.plist" mode="merge">
+          <string>Esta aplicación usara tu ubicación para mapas.</string>
+      </edit-config>
+      <edit-config target="NSLocationAlwaysUsageDescription" file="*-Info.plist" mode="merge">
+          <string>Esta aplicación usara tu ubicación para mapas.</string>
+      </edit-config>
+  </platform>
+
+  <!-- On Android the cordova-plugin-geolocation version 4.0.1 will not prompt for the geolocation permissions -->
+  <!-- With these permission overrides the app will ask for the fine location permission anyway -->
+  <platform name="android">
+      <uses-permission name="android.permission.ACCESS_COARSE_LOCATION" />
+      <uses-permission name="android.permission.ACCESS_FINE_LOCATION" />
+      <uses-permission name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+      <uses-permission name="android.permission.INTERNET" />
+  </platform>
+  
+  <allow-intent href="http://*/*" />
+  <allow-intent href="https://*/*" />
+  <allow-intent href="tel:*" />
+  <allow-intent href="sms:*" />
+  <allow-intent href="mailto:*" />
+  <allow-intent href="geo:*" />
+  <allow-navigation href="*" />
+
+  <platform name="android">
+    <allow-intent href="market:*" />
+  </platform>
+  <platform name="ios">
+    <allow-intent href="itms:*" />
+    <allow-intent href="itms-apps:*" />
+  </platform>
+
+  <feature name="NetworkStatus">
+    <param name="android-package" value="org.apache.cordova.NetworkManager" />
+  </feature>
+
+  <platform name="android">
+    <icon src="res/icons/android/icon-36-ldpi.png" density="ldpi" />
+    <icon src="res/icons/android/icon-48-mdpi.png" density="mdpi" />
+    <icon src="res/icons/android/icon-72-hdpi.png" density="hdpi" />
+    <icon src="res/icons/android/icon-96-xhdpi.png" density="xhdpi" />
+    <icon src="res/icons/android/xxhdpi.png" density="xxhdpi" />
+    <icon src="res/icons/android/xxxhdpi.png" density="xxxhdpi" />
+  </platform>
+
+
+  <platform name="ios">
+    <!-- iOS 8.0+ -->
+    <!-- iPhone 6 Plus  -->
+    <icon src="res/icons/ios/icon-60-3x.png" width="180" height="180" />
+    <!-- iOS 7.0+ -->
+    <!-- iPhone / iPod Touch  -->
+    <icon src="res/icons/ios/icon-60.png" width="60" height="60" />
+    <icon src="res/icons/ios/icon-60-2x.png" width="120" height="120" />
+    <!-- iPad -->
+    <icon src="res/icons/ios/icon-76.png" width="76" height="76" />
+    <icon src="res/icons/ios/icon-76-2x.png" width="152" height="152" />
+    <!-- iOS 6.1 -->
+    <!-- Spotlight Icon -->
+    <icon src="res/icons/ios/icon-40.png" width="40" height="40" />
+    <icon src="res/icons/ios/icon-40-2x.png" width="80" height="80" />
+    <!-- iPhone / iPod Touch -->
+    <icon src="res/icons/ios/icon-57.png" width="57" height="57" />
+    <icon src="res/icons/ios/icon-57-2x.png" width="114" height="114" />
+    <!-- iPad -->
+    <icon src="res/icons/ios/icon-72.png" width="72" height="72" />
+    <icon src="res/icons/ios/icon-72-2x.png" width="144" height="144" />
+    <!-- iPhone Spotlight and Settings Icon -->
+    <icon src="res/icons/ios/icon-small.png" width="29" height="29" />
+    <icon src="res/icons/ios/icon-small-2x.png" width="58" height="58" />
+    <!-- iPad Spotlight and Settings Icon -->
+    <icon src="res/icons/ios/icon-50.png" width="50" height="50" />
+    <icon src="res/icons/ios/icon-50-2x.png" width="100" height="100" />
+  </platform>
+
+
+  <splash src="res/screens/default.png" />
+
+</widget>

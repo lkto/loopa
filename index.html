@@ -1,0 +1,51 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Loopa</title>
+	
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet">
+
+	<link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/owl.theme.default.min.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/themify-icons.css">
+	<link rel="stylesheet" href="css/main.css" type="text/css" media="all">
+</head>
+<body>
+
+	<main class="bg-white bg-cover" style="background-image: url(images/landing-bg.jpg);">
+		<div class="d-flex align-items-center mx-auto vertical-form">
+			<div class="container">
+				<div class="card bg-tranparent">
+					<div class="card-body p-2 ">
+						<form>
+							<h1 class="text-white">Loopa</h1>
+							<div class="input-group mb-3 mt-3 bg-white">
+								<i class="ti-user"></i>
+								<input class="form-control form-control-lg" id="username" type="text" placeholder="Username">
+							</div>
+							<div class="input-group mb-3 bg-white">
+								<i class="ti-lock"></i>
+								<input class="form-control form-control-lg" id="password" type="password" placeholder="Password" required="">
+							</div>
+							<a class="link-primary text-white" href="forgot-password.html">Forgot password?</a>
+							<a onclick="login()" class="btn btn-block btn-lg btn-primary mt-2" type="submit">Sign In</a>
+							<p class="mt-4 text-center text-grey2">Don't have account? <a class="link-primary text-white fw-600" onclick="login()">Ingresar</a>.</p>
+							<a href="#" class="mt-1 next-tour btn btn-lg pl-0 text-left w100 bg-orange text-white"><i class="ti-google mr-4 ml-4"></i>Connet with <b>Google</b></a>
+							<a href="#" class="mt-3 next-tour btn btn-lg pl-0 text-left w100 bg-blue text-white"><i class="ti-facebook mr-4 ml-4"></i>Connet with <b>Facebook</b></a>
+						</form>
+					</div>
+				</div>
+			</div>			
+		</div>
+	</main>
+
+
+	
+	<script src="js/plugin.js"></script>
+	<script src="js/main.js"></script>
+
+	<script src="js/loopa.js"></script>
+
+</body>
+</html>
