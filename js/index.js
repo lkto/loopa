@@ -16,7 +16,10 @@ class Login {
     const divRegister = $("#content-register");
     const divContent = $("#content-page");
     divContent.css('display', 'none');
+    divRegister.load('./pages/login.html');
+    divRegister.css('display', 'block');
 
+    /*
     $.ajax({
       url: this.url + "pages/login.html",
       type: 'POST',
@@ -27,7 +30,7 @@ class Login {
       divRegister.html(response)
       divRegister.css('display', 'block');
     })
-
+    */
   }
 
   logIn() {
@@ -56,7 +59,10 @@ class Home {
     divRegister.css('display', 'none');
     titlePage.html('Inicio');
     divContent.css('display', 'block');
+    divContentInfo.load('./pages/home.html');
+    divContentInfo.css('display', 'block');
 
+    /*
     $.ajax({
       url: this.url + "pages/home.html",
       type: 'POST',
@@ -69,6 +75,7 @@ class Home {
       divContentInfo.css('display', 'block');
       //spinner.toggle();
     })
+    */
 
   }
 }
