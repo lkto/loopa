@@ -5,8 +5,3 @@ function login() {
 function logOut() {
     location.href = "../index.html";
 }
-
-function navigate(path) {
-
-
-}
