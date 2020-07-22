@@ -1,8 +1,8 @@
 /* eslint-disable no-console */
 /* eslint-disable no-alert */
 
-const url = "/";
-//const url = "http://localhost/loopa/";
+const url = location.href;
+//const url = location.origin + "/loopa/";
 
 //Clases 
 class Login {
